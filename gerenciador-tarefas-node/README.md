@@ -80,19 +80,16 @@ Diagrama de Casos de Uso
 O diagrama de casos de uso abaixo mostra as interações entre o administrador e as funcionalidades principais do sistema, que incluem gerenciamento de usuários e tarefas.
 
 ```mermaid
-usecaseDiagram
-    actor Admin as "Admin"
-    Admin --> (Adicionar Usuário)
-    Admin --> (Adicionar Tarefa)
-    Admin --> (Atualizar Status)
-    Admin --> (Excluir Tarefa)
-    Admin --> (Listar Tarefas)
+graph LR
+    Admin[Admin] --> AdicionarUsuario[Adicionar Usuário]
+    Admin --> AdicionarTarefa[Adicionar Tarefa]
+    Admin --> AtualizarStatus[Atualizar Status]
+    Admin --> ExcluirTarefa[Excluir Tarefa]
+    Admin --> ListarTarefas[Listar Tarefas]
+    
+    classDef actor fill:#f9f,stroke:#333,stroke-width:2px;
+    class Admin actor;
 
-    usecase AdicionarUsuário as "Adicionar Usuário"
-    usecase AdicionarTarefa as "Adicionar Tarefa"
-    usecase AtualizarStatus as "Atualizar Status"
-    usecase ExcluirTarefa as "Excluir Tarefa"
-    usecase ListarTarefas as "Listar Tarefas"
 ```
 Explicação dos Casos de Uso
 Adicionar Usuário: Permite que o administrador adicione um novo usuário ao sistema.
