@@ -7,7 +7,8 @@ A aplicação está organizada nas seguintes camadas:
 Model: Representa a lógica de dados e define as entidades (Usuário e Tarefa) no banco de dados.
 View: Contém os arquivos HTML e CSS para a interface do usuário.
 Controller: Interage com os modelos e manipula as requisições para retornar as respostas apropriadas.
-Diagrama de Classes
+
+#Diagrama de Classes
 O diagrama de classes abaixo representa as principais classes da aplicação e suas relações.
 
 ```mermaid
@@ -33,30 +34,11 @@ classDiagram
         + excluir(int id)
     }
 
-    class Database {
-        - Pool pool
-        + getConnection() Connection
-    }
 
-    class usuarioController {
-        + listar(req, res) void
-        + criar(req, res) void
-    }
-
-    class tarefaController {
-        + listar(req, res) void
-        + criar(req, res) void
-        + atualizarStatus(req, res) void
-        + excluir(req, res) void
-    }
-
-    Database --> Usuario
-    Database --> Tarefa
-    usuarioController --> Usuario
-    tarefaController --> Tarefa
+    Usuario --> Tarefa
 ```
 
-Explicação das Classes
+#Explicação das Classes
 Usuario:
 
 Representa um usuário do sistema.
@@ -93,8 +75,14 @@ graph LR
 ```
 Explicação dos Casos de Uso
 Adicionar Usuário: Permite que o administrador adicione um novo usuário ao sistema.
+
 Adicionar Tarefa: Permite que o administrador adicione uma nova tarefa, associando-a a um usuário.
+
 Atualizar Status: Permite que o administrador atualize o status de uma tarefa, alterando entre "A Fazer", "Fazendo" e "Pronto".
+
 Excluir Tarefa: Permite que o administrador exclua uma tarefa do sistema.
+
 Listar Tarefas: Exibe todas as tarefas organizadas em colunas com base no status (A Fazer, Fazendo, Pronto), possibilitando visualização rápida das tarefas.
+
+
 Esses diagramas ajudam a visualizar e entender a organização e as interações na aplicação. O diagrama de classes fornece uma visão geral da estrutura de dados e dos métodos, enquanto o diagrama de casos de uso mostra as operações principais que o administrador pode realizar.
