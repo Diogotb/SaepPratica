@@ -18,7 +18,6 @@ classDiagram
         - string nome
         - string email
         + criar(string nome, string email)
-        + listar() List~Usuario~
     }
 
     class Tarefa {
